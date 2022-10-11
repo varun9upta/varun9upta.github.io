@@ -1,0 +1,28 @@
+# jemdoc: menu{MENU}{bio.html}
+= Varun Gupta -- Bio
+
+- 2016 -- Present: Associate Professor, University of Chicago, Booth School of Business.
+- 2012 -- 2016: Assistant Professor, University of Chicago, Booth School of Business.
+- 2011 -- 2012: Postdoctoral Researcher, Google Research (NY).
+- 2004 -- 2011: Ph.D. student, Computer Science Department, Carnegie Mellon University. (Advisor: [http://www.cs.cmu.edu/~harchol Mor Harchol-Balter])\n
+Thesis title: /Stochastic Models and Analysis for Resource Management in Server Farms/ \[[./papers/thesis_varun.pdf thesis]\]
+- Summer 2008: Research Intern, Alcatel-Lucent Bell Labs.
+- Summer 2006: Research Intern, Microsoft Research (Cambridge, UK).
+- 2000 -- 2004: B.Tech. student, Computer Science and Engineering, Indian Institute of Techology (Delhi, India). /President's Gold Medal winner/ \n
+Thesis title: /Algorithms for Computational Biology: Sequence Analysis/
+
+Curriculum Vitae \[[./cv_varun.pdf pdf]\]
+
+~~~
+{}{raw}
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-66628707-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+~~~

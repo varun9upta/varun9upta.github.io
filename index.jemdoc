@@ -1,0 +1,46 @@
+# jemdoc: menu{MENU}{index.html}
+= Varun Gupta
+
+~~~
+{}{img_left}{Gupta_Varun.jpg}{Varun Gupta}{230}
+Associate Professor of Operations Management \n
+Booth School of Business\n
+ University of Chicago.
+
+== Contact Information
+331 Harper Center\n
+5807 S Woodlawn Avenue\n
+ Chicago, IL 60637. \n
+\n
+guptav@uchicago.edu \n
+\n
+773-702-7315
+~~~
+
+== Research Interests
+Stochastic processes, applied probability, mechanism design with applications to:
+- Learning and Control in non-stationary environments
+- Operations of online platforms
+- Optimization of spatial queueing/matching and transportation networks
+- Scheduling theory
+- Cloud computing
+
+As part of research, I am working with [https://convoy.com/ third party logistics], and [https://tillable.com/ farm real estate] platforms.
+
+I am also interested in applying tools from Operations Research, Econometrics, and AI/ML to improve access and lower barriers to mental healthcare.
+
+#I am particularly interested in applications of these tools to: cloud computing infrastructure, healthcare operations, inventory management, influence propagation in social networks.
+
+~~~
+{}{raw}
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-66628707-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+~~~

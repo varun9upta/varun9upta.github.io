@@ -1,0 +1,126 @@
+# jemdoc: menu{MENU}{publications.html}
+= Varun Gupta -- Publications
+
+== Working
+- /Designing Service Menus for Bipartite Queueing Systems/ \[[papers/designing_service_menus.pdf pdf]\] \[ [https://www.youtube.com/watch?v=Wu_YS2kWao4 Youtube] \] \n
+with R. Caldentey, L. Hillas. \n
+(Under revision at Operations Research)
+- /Reneging and Balking in Resource Sharing Systems/ \[[https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4158671 SSRN]\]\n
+- /Constrained High Dimensional Statistical Inference/ \[[https://arxiv.org/abs/1911.07319 arXiv]\] \n
+with M. Kolar, M. Yu. \n
+- /Inducing Optimal Scheduling with Selfish Users/
+\[[papers/mechanism_MS.pdf pdf]\] \n
+with L. Debo, P. Enders, A. Gandhi, M. Harchol-Balter, A. Scheller-Wolf.\n
+
+== Work in progress
+- /Dynamic Auctions for Truckload Marketplaces/ \n
+
+== Journal
+- /Greedy Algorithm for Multiway Matching with Bounded Regret/
+\[[https://arxiv.org/abs/2112.04622 arXiv\]] \n
+(Operations Research, To appear) \n
+- /Dynamic Regret Minimization for Control of Non-stationary Linear Dynamical Systems/  
+\[[https://arxiv.org/abs/2111.03772 arXiv]\] \[[https://dl.acm.org/doi/10.1145/3508029 Proceeding]\] \[[https://youtu.be/YzS4Zf7m8q8 Youtube]\]  \n
+with M. Kolar, Y. Luo. (SIGMETRICS 2022 / Proceedings of the ACM on Measurement and Analysis of Computer Systems 6(1)) \n
+- /On the Optimal Design of a Bipartite Matching Queueing System/ 
+\[[http://paper.ssrn.com/sol3/papers.cfm?abstract_id=3345302 SSRN]\] \n 
+with P. Afeche, R. Caldentey (Operations Research, 2022)\n
+- /Diffusion Approximation and Optimal Control for State-dependent Limited Processor Sharing Queues/
+\[[http://arxiv.org/abs/1409.0153 arXiv]\] \n
+with J. Zhang (Stochastic Systems, 2022)\n
+- / Greed Works - Online Algorithms for Unrelated Machine Stochastic Scheduling/ 
+\[[https://arxiv.org/abs/1703.01634 arXiv]\] \n
+with B. Moseley, M. Uetz, Q. Xie (Math of Operations Research, 2020) \n 
+- /Interior-point Based Online Stochastic Bin Packing/
+\[[http://ssrn.com/abstract=2673951 SSRN]\] \n 
+with A. Radovanovic (Operations Research, 2020) \n 
+- /Estimation of a Low-rank Topic-Based Model for Information Cascades/ \[[https://www.jmlr.org/papers/v21/19-496.html JMLR]\] \n
+with M. Kolar, M. Yu. (JMLR, 2020) \n
+- /Simultaneous Inference for Pairwise Graphical Models with Generalized Score Matching/ \[[https://jmlr.org/papers/v21/19-383.html JMLR]\] \n
+with M. Kolar, M. Yu. (JMLR, 2020) \n
+- /Load Balancing in the Non-Degenerate Slowdown Regime/
+\[[https://arxiv.org/abs/1707.01969 arXiv]\] \n
+with N. Walton (Operations Research, 2019)\n
+- / Search among Queues under Quality Differentiation/ 
+\[[http://ssrn.com/abstract=2677990 SSRN]\] \n 
+with L. Yang, L. Debo (Management Science, 2019)\n
+- /Trading Time in a Congested Environment/ 
+\[[http://ssrn.com/abstract=2567347 SSRN]\] \n 
+with L. Yang, L. Debo. (Management Science, 2016)  {{<font color=red> MSOM Service Management SIG Best Publication Award, 2020. </font>}}
+- /Stability of the Bipartite Matching Model/
+\[[https://projecteuclid.org/euclid.aap/1370870122 link]\]
+\[[http://arxiv.org/abs/1003.3477 arXiv]\] \n
+With A. Busic, J. Mairesse. (Advances in Applied Probability, 2013)
+- /On Markov-Krein Characterization of the Mean Sojourn Time in /M\/G\/k/ and other Queueing Systems/
+\[[http://link.springer.com/article/10.1007/s11134-011-9248-8 link]\]  \[[papers/CMU-CS-11-109.pdf TR]\]\n
+with T. Osogami. (Queueing Systems, 2011)
+- /Optimality Analysis of Energy-Performance Trade-off for Server Farm Management/
+\[[http://dx.doi.org/10.1016/j.peva.2010.08.009 link]\]
+\[[papers/power_PEVA.pdf pdf]\] \n
+with A. Gandhi, M. Harchol-Balter, M. Kozuch. (Performance Evaluation, 2010)
+- /Analysis of Scheduling Policies under Correlated Job Sizes/
+\[[http://dx.doi.org/10.1016/j.peva.2010.08.010 link]\]
+\[[papers/correlated_PEVA.pdf pdf] \] \[[papers/CMU-CS-10-107.pdf TR]\]\n
+with M. Burroughs, M. Harchol Balter. (Performance Evaluation, 2010)
+- /On the inapproximability of /M\/G\/k/: Why two moments of job size distribution are not enough/
+\[[http://link.springer.com/article/10.1007/s11134-009-9133-x link]\] \[[papers/MGK_QUESTA09.pdf pdf]\] \n
+with J. Dai, M. Harchol-Balter, B. Zwart. (Queueing Systems, 2010)
+- /Sampling Strategies for Epidemic-style Information Dissemination/
+\[[http://dx.doi.org/10.1109/TNET.2010.2051233 link]\] \[[papers/MSR-TR-2007-82.pdf TR]\] \n
+with M. Vojnovic, T. Karagiannis, C. Gkantsidis. (IEEE Transactions on Networking, 2010)
+- /Analysis of Join-the-Shortest-Queue Routing for Web Server Farms/
+\[[http://dx.doi.org/10.1016/j.peva.2007.06.012 link]\] \[[papers/Perf07.pdf pdf]\] \n
+with M. Harchol-Balter, K. Sigman, W. Whitt. (Performance Evaluation, 2007)
+
+== Conference and Workshop
+- /Approximation Schemes for Multiperiod Binary Knapsack Problems/ \[[https://arxiv.org/abs/2104.00034 arXiv]\] \n
+with J. Birge, Z. Gao. (CSR, 2021) \n
+- /Permutation Strikes Back: The Power of Rescource in Online Metric Matching/ \[[https://arxiv.org/abs/1911.12778 arXiv]\] \n
+with R. Krishnaswamy, S. Sandeep. (APPROX, 2020) \n
+- /Information Models: Creating and Preserving Value in Volatile Cloud Resources/  \n
+with C. Zhang, A. Chien (IC2E, 2019)
+- /Stochastic Online Scheduling on Unrelated Machines/
+\[[papers/OnlineStochasticUnrelated2017IPCO.pdf pdf]\] \n
+with B. Moseley, M. Uetz, Q. Xie. (IPCO, 2017)
+- /Statistical Inference for Pairwise Graphical Models Using Score Matching/
+\[[papers/ScoreMatchingInference2016NIPS.pdf pdf]\] \n
+with M. Yu, M. Kolar. (NIPS, 2016)
+- /Lagrangian-Based Online Stochastic Bin Packing/
+\[[papers/packing_SIGM15.pdf pdf]\] \n
+with A. Radovanovic. (SIGMETRICS, 2015)
+- /Distributed Caching Algorithms for Content Distribution Networks/
+\[[papers/Cooperative_caching.pdf pdf]\] \n 
+with S. Borst, A. Walid. (INFOCOM, 2010) {{<font color=red>}}INFOCOM Test of time award, 2022.{{</font>}} 
+- /Robust and Flexible Power-proportional Storage/
+\[[papers/rabbit.pdf pdf]\] \n
+with H. Amur, J. Cipar, M. Kozuch, G. Ganger, K. Schwan. (SOCC, 2010)
+- /Self-Adaptive Admission Control Policies for Resource-Sharing Systems/
+\[[papers/SIGM09.pdf pdf]\] \n
+with M. Harchol-Balter. (SIGMETRICS, 2009)
+- /Fundamental Characteristic of Queues with Fluctuating Load/
+\[[papers/SIGM06.pdf pdf]\] \n
+with M. Harchol-Balter, A. Scheller-Wolf, U. Yechiali. (SIGMETRICS, 2006)
+- /Fluid Level in a Reservoir with an On-Off Source/
+\[[papers/FluidLevel_MAMA.pdf pdf]\] \n
+with P. Harrison. (MAMA, 2008)
+- /Finding the Optimal Quantum Size: Sensitivity Analysis of the /M\/G\/1/ Round-Robin Queue/
+\[[papers/MG1_RR_MAMA.pdf pdf]\] \n
+(MAMA, 2008)
+
+== Thesis
+- /Stochastic Models and Analysis for Resource Management in Server Farms/ 
+\[[papers/thesis_varun.pdf pdf]\] \[[talks/thesis_slides.pdf slides]\]
+
+~~~
+{}{raw}
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-66628707-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+~~~

@@ -1,0 +1,35 @@
+# jemdoc: menu{MENU}{talks.html}
+= Varun Gupta -- Selected Talks
+
+- /Online Stochastic Bin Packing/ \n
+(Mostly OM 2015, Tsinghua University; INFORMS 2014; Kellogg; IBM Research; NYU)
+- /State-dependent Limited Processor Sharing -- Approximations and Optimal Control / \[[talks/LPS_slides.pdf slides]\]   \n
+(INFORMS 2014)
+- /Tight Moments-based Bounds for Queueing Systems / \[[talks/APS2011_pdf.pdf slides]\] \n
+(INFORMS APS 2011; Microsoft Research)
+- /Optimal Load Balancing Policies for Heterogeneous Server Farms/ \[slides\] \n
+(INFORMS 2010)
+- /Enery-efficient Dynamic Capacity Provisioning in Server Farms/ \[[talks/power_dist.pdf slides]\] \n
+(INFORMS 2010)
+- /Analysis of Scheduling Policies under Correlated Job Sizes / \[[talks/correlated_final.pdf slides]\] \n
+(Performance 2010)
+- / Optimizing Resource Sharing Systems/ \[[talks/resource_sharing.pdf slides]\]\n
+(University of Washington)
+- /Finding the Optimal Quantum Size -- Revisiting the /M\/G\/1/ Round-Robin Queue/ \[[talks/MG1_RR.pdf slides]\] \n
+(MAMA 2007)
+- /Fluid level in tandem queues with an On\/Off source/ \[[talks/Fluid_tandem.pdf slides]\] \n
+(MAMA 2007) 
+
+~~~
+{}{raw}
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-66628707-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+~~~
