@@ -2,19 +2,26 @@
 = Varun Gupta
 
 ~~~
-{}{img_left}{Gupta_Varun.jpg}{Varun Gupta}{230}
+{}{img_left}{Gupta_Varun.jpg}{Varun Gupta}{200}
+{{Professor <br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ Operations and Information Systems, <br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ David Eccles School of Business, The University of Utah.}} \n 
 {{ Visiting Associate Professor <br>
  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  Computer Science, Northwestern University.}} \n
-{{Adjunct Associate Professor <br>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-Booth School of Business, University of Chicago.}} \n
-\n
-Email: [mail@varungupta.info] \n
-Phone: 773.702.7315
+#\n
+#Email: \n
+#[mail@varungupta.info] \n
+#[varun.gupta@eccles.utah.edu] \n
 
-#== Contact Information
-#331 Harper Center\n
+== Contact Information
+SFEBB 7209 \n
+1655 E Campus Center Dr \n
+Salt Lake City, UT 84112. \n
+[mail@varungupta.info] \n
+[varun.gupta@eccles.utah.edu] \n
 #5807 S Woodlawn Avenue\n
 # Chicago, IL 60637. \n
 #\n
@@ -34,9 +41,8 @@ Stochastic processes, applied probability, mechanism design with applications to
 
 \n
 
-As part of research, I am working with [https://convoy.com/ third party logistics], and [https://tillable.com/ farm real estate] platforms.
-
-I am also interested in applying tools from Operations Research, Econometrics, and AI/ML to improve access and lower barriers to mental healthcare.
+# As part of research, I have worked with third party logistics, farm real estate platforms.
+#I am also interested in applying tools from Operations Research, Econometrics, and AI/ML to improve access and lower barriers to mental healthcare.
 
 #I am particularly interested in applications of these tools to: cloud computing infrastructure, healthcare operations, inventory management, influence propagation in social networks.
 

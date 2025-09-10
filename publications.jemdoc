@@ -5,13 +5,7 @@
 - /MNL-Bandit in non-stationary environments/ \[[https://arxiv.org/abs/2303.02504 arXiv]\] \n
 with A. Foussoul, V. Goyal. \n
 (Under submission)
-- /Designing Service Menus for Bipartite Queueing Systems/ \[[papers/designing_service_menus.pdf pdf]\] \[[https://vod.video.cornell.edu/media/Stochastic+Networks+Conference+2022+-+Varun+Gupta+Edit+-+No+Audio+at+Start/1_y9fv567p/261126952 Video]\] \n
-with R. Caldentey, L. Hillas. \n
-(Under revision at Operations Research)
 - /Reneging and Balking in Resource Sharing Systems/ \[[https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4158671 SSRN]\]\n
-- /Managing Resources for Shared Micromobility: Approximate Optimality in Large-Scale Systems/ \[[https://ssrn.com/abstract=4155841 SSRN]\] \n
-with D. Akturk, O. Candogan. \n
-(Under submission)
 - /Constrained High Dimensional Statistical Inference/ \[[https://arxiv.org/abs/1911.07319 arXiv]\] \n
 with M. Kolar, M. Yu. \n
 - /Inducing Optimal Scheduling with Selfish Users/
@@ -23,14 +17,23 @@ with L. Debo, P. Enders, A. Gandhi, M. Harchol-Balter, A. Scheller-Wolf.\n
 - /Time-series models for variable capacity resources/
 
 == Journal
+- /Managing Resources for Shared Micromobility: Approximate Optimality in Large-Scale Systems/
+ \[[https://ssrn.com/abstract=4155841 SSRN]\] 
+\[[https://doi.org/10.1287/mnsc.2022.02023 Journal]\]
+ \n
+with D. Akturk, O. Candogan. (Management Science, To appear) \n
+- /Designing Service Menus for Bipartite Queueing Systems/ \[[papers/designing_service_menus.pdf pdf]\] 
+\[[https://pubsonline-informs-org.proxy.uchicago.edu/doi/full/10.1287/opre.2022.0179 Journal]\]
+\[[https://vod.video.cornell.edu/media/Stochastic+Networks+Conference+2022+-+Varun+Gupta+Edit+-+No+Audio+at+Start/1_y9fv567p/261126952 Video]\] \n
+with R. Caldentey, L. Hillas. (Operations Research, To appear) \n
 - /Greedy Algorithm for Multiway Matching with Bounded Regret/
 \[[https://arxiv.org/abs/2112.04622 arXiv\]] \[[https://doi.org/10.1287/opre.2022.2400 Journal]\] \n
-(Operations Research, To appear) \n
+(Operations Research, 2024) \n
 - /Dynamic Regret Minimization for Control of Non-stationary Linear Dynamical Systems/  
 \[[https://arxiv.org/abs/2111.03772 arXiv]\] \[[https://dl.acm.org/doi/10.1145/3508029 Proceeding]\] \[[https://youtu.be/YzS4Zf7m8q8 Youtube]\]  \n
 with M. Kolar, Y. Luo. (SIGMETRICS 2022 / Proceedings of the ACM on Measurement and Analysis of Computer Systems 6(1)) \n
 - /On the Optimal Design of a Bipartite Matching Queueing System/ 
-\[[http://paper.ssrn.com/sol3/papers.cfm?abstract_id=3345302 SSRN]\]  \[[https://doi.org/10.1287/opre.2020.2027 Journal]\] \n 
+\[[http://papers.ssrn.com/sol3/papers.cfm?abstract_id=3345302 SSRN]\]  \[[https://doi.org/10.1287/opre.2020.2027 Journal]\] \n 
 with P. Afeche, R. Caldentey (Operations Research, 2022)\n
 - /Diffusion Approximation and Optimal Control for State-dependent Limited Processor Sharing Queues/
 \[[http://arxiv.org/abs/1409.0153 arXiv]\] \[[https://doi.org/10.1287/stsy.2021.0087 Journal]\] \n
