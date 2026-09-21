@@ -1,4 +1,16 @@
-publications.jemdoc
-index.jemdoc
-publications.jemdoc
-bio.jemdoc
+# jemdoc sources and menu -- kept local (Dropbox) only, never published
+*.jemdoc
+MENU
+
+# stray LaTeX / build logs
+*.log
+
+# editor helper and tooling archives
+jemdoc.vim
+*.zip
+/jemdoc-cvx-1.0.0/
+
+# npm (katex, only needed if you add equations)
+node_modules/
+package-lock.json
+katexcache/
