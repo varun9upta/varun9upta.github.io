@@ -301,7 +301,7 @@ def standardconf():
   </div>
 
   [lastupdated]
-  Page generated |, by <a href="https://github.com/cvxgrp/jemdoc-cvx" target="blank">jemdoc-cvx</a>.
+  Page generated |, by <a href="https://github.com/cvxgrp/jemdoc-cvx" target="_blank">jemdoc-cvx</a>.
 
   [sourcelink]
   (<a href="|">source</a>)
@@ -380,7 +380,7 @@ def insertmenuitems(f, mname, current, prefix):
             if r:  # then we have a menu item.
                 link = r.group(2)
                 if link[0] == "\\":
-                    option = ' target="blank"'
+                    option = ' target="_blank"'
                     link = link[1:]
                 else:
                     option = ""
@@ -746,7 +746,7 @@ def replacelinks(b):
             option = ""
             m1 = m1[1:]
         else:
-            option = ' target="blank"'
+            option = ' target=\\"\\_blank\\"'
 
         if "@" in m1 and not m1.startswith("mailto:") and not m1.startswith("http://"):
             link = "mailto:" + m1
