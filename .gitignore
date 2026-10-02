@@ -1,6 +1,8 @@
-# jemdoc sources and menu -- kept local (Dropbox) only, never published
+# page sources -- kept local (Dropbox) only, never published
 *.jemdoc
 MENU
+publications.toml
+build_pubs.py
 
 # stray LaTeX / build logs
 *.log

@@ -1,0 +1,302 @@
+/* pubs.css — styles for the generated publications page.
+   Layered on top of jemdoc-cvx.css; inherits its warm palette
+   (page #fbfaf7, rules #e1ddd3, links #5a7da3) and serif stack. */
+
+:root {
+	--pub-ink:        #1f1f1f;
+	--pub-muted:      #6f6862;
+	--pub-faint:      #8c857e;
+	--pub-rule:       #e1ddd3;
+	--pub-link:       #5a7da3;
+
+	--pub-journal-bg: #eaf0f6;
+	--pub-journal-br: #c4d4e4;
+	--pub-journal-fg: #38536f;
+
+	--pub-conf-bg:    #f2eee5;
+	--pub-conf-br:    #ddd3bf;
+	--pub-conf-fg:    #6b5c41;
+
+	--pub-work-bg:    transparent;
+	--pub-work-br:    #cfc8bd;
+	--pub-work-fg:    #6f6862;
+
+	--pub-award-bg:   #fbf3e0;
+	--pub-award-br:   #e8d3a3;
+	--pub-award-fg:   #7a5c16;
+}
+
+/* ---- intro ---------------------------------------------------------- */
+
+.pub-intro {
+	margin: 0.2em 0 1.6em;
+	font-size: 0.95em;
+}
+
+/* ---- section + year headings ---------------------------------------- */
+
+.pub-section {
+	margin: 2.1em 0 0.2em;
+	padding-top: 0;
+	font-size: 1.18em;
+	font-weight: 600;
+	letter-spacing: 0.01em;
+}
+
+.pub-year {
+	display: flex;
+	align-items: center;
+	gap: 0.7em;
+	margin: 1.5em 0 0.5em;
+	font-size: 0.95em;
+	font-weight: 600;
+	font-variant-numeric: tabular-nums;
+	color: var(--pub-faint);
+}
+
+.pub-year::after {
+	content: "";
+	flex: 1;
+	height: 1px;
+	background: var(--pub-rule);
+}
+
+/* ---- entries -------------------------------------------------------- */
+
+.pub-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.pub {
+	padding: 0.62em 0;
+	border-bottom: 1px solid color-mix(in srgb, var(--pub-rule) 55%, transparent);
+}
+
+.pub:last-child { border-bottom: none; }
+
+/* Row 1: the title, full width, nothing competing with it. */
+.pub-r1 { display: block; }
+
+/* Row 2: venue badge first, so every badge starts at the left margin and
+   they stack into one column the eye can run down. Then authors, links. */
+.pub-r2 {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	gap: 0.18em 0.55em;
+	margin-top: 0.22em;
+}
+
+.pub-r2 .pub-venue { flex: none; }
+
+.pub-title {
+	font-size: 1.02em;
+	font-weight: 600;
+	line-height: 1.35;
+	color: var(--pub-ink);
+}
+
+.pub-authors {
+	font-size: 0.92em;
+	color: var(--pub-muted);
+	line-height: 1.4;
+}
+
+.pub-authors .me {
+	font-weight: 600;
+	color: var(--pub-ink);
+}
+
+.pub-meta {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.42em;
+	margin-top: 0.42em;
+}
+
+/* ---- compact rows (working papers) ---------------------------------- */
+
+.pub-list--compact { margin-top: 0.25em; }
+
+.pub--compact {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	gap: 0 0.5em;
+	padding: 0.3em 0;
+	line-height: 1.45;
+}
+
+.pub--compact .pub-title {
+	font-size: 0.98em;
+	font-weight: 600;
+}
+
+.pub--compact .pub-authors {
+	margin-top: 0;
+	font-size: 0.88em;
+}
+
+.pub--compact .pub-links { margin-left: auto; }
+
+.pub-status {
+	color: var(--pub-faint);
+	font-size: 0.85em;
+	font-style: italic;
+}
+
+/* collapsed variant */
+
+.pub-fold > summary {
+	cursor: pointer;
+	list-style: none;
+}
+
+.pub-fold > summary::-webkit-details-marker { display: none; }
+
+.pub-fold > summary::before {
+	content: "\25B8";           /* ▸ */
+	display: inline-block;
+	margin-right: 0.45em;
+	color: var(--pub-faint);
+	transition: transform 0.12s ease;
+}
+
+.pub-fold[open] > summary::before { transform: rotate(90deg); }
+
+.pub-n {
+	margin-left: 0.3em;
+	padding: 0.05em 0.45em;
+	border: 1px solid var(--pub-rule);
+	border-radius: 999px;
+	background: #fff;
+	color: var(--pub-faint);
+	font-size: 0.7em;
+	font-weight: 600;
+	vertical-align: 0.15em;
+}
+
+/* ---- venue badge ---------------------------------------------------- */
+
+.pub-venue {
+	display: inline-block;
+	padding: 0.1em 0.5em;
+	border: 1px solid;
+	border-radius: 3px;
+	font-size: 0.75em;
+	font-weight: 600;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+.pub-venue--journal {
+	background: var(--pub-journal-bg);
+	border-color: var(--pub-journal-br);
+	color: var(--pub-journal-fg);
+}
+
+.pub-venue--conference {
+	background: var(--pub-conf-bg);
+	border-color: var(--pub-conf-br);
+	color: var(--pub-conf-fg);
+}
+
+.pub-venue--chapter {
+	background: #f0eef4;
+	border-color: #d5cfe0;
+	color: #574b6b;
+}
+
+.pub-venue--working,
+.pub-venue--thesis {
+	background: var(--pub-work-bg);
+	border-color: var(--pub-work-br);
+	border-style: dashed;
+	color: var(--pub-work-fg);
+}
+
+/* Year inside the venue badge: same badge, lighter so the venue still leads. */
+.pub-venue .pub-y {
+	margin-left: 0.15em;
+	padding-left: 0.42em;
+	border-left: 1px solid currentColor;
+	font-weight: 500;
+	font-variant-numeric: tabular-nums;
+	opacity: 0.72;
+}
+
+.pub-detail {
+	color: var(--pub-faint);
+	font-size: 0.85em;
+	font-variant-numeric: tabular-nums;
+}
+
+/* ---- link pills ----------------------------------------------------- */
+
+.pub-links {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: 0.3em;
+}
+
+a.pub-link,
+a.pub-link:link,
+a.pub-link:visited {
+	display: inline-block;
+	padding: 0.05em 0.45em;
+	border: 1px solid var(--pub-rule);
+	border-radius: 3px;
+	font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+	font-size: 0.72em;
+	line-height: 1.6;
+	color: var(--pub-link);
+	text-decoration: none;
+	background: #fff;
+}
+
+a.pub-link:hover {
+	border-color: var(--pub-link);
+	background: var(--pub-journal-bg);
+	text-decoration: none;
+}
+
+/* ---- award ---------------------------------------------------------- */
+
+/* Row 3: award, when there is one. Indented to the badge column so it
+   hangs off the citation line rather than restarting at the title. */
+.pub-r3 { margin-top: 0.28em; }
+
+.pub-award {
+	display: inline-block;
+	padding: 0.08em 0.55em;
+	border: 1px solid var(--pub-award-br);
+	border-radius: 3px;
+	background: var(--pub-award-bg);
+	color: var(--pub-award-fg);
+	font-size: 0.82em;
+}
+
+.pub-award::before {
+	content: "\2605";      /* ★ */
+	margin-right: 0.4em;
+}
+
+/* ---- narrow screens -------------------------------------------------- */
+
+@media (max-width: 640px) {
+	#tlayout { grid-template-columns: 1fr; }
+	#layout-menu { white-space: normal; }
+	.pub-title { font-size: 1em; }
+}
+
+/* ---- print ----------------------------------------------------------- */
+
+@media print {
+	#layout-menu { display: none; }
+	.pub-links { display: none; }
+	.pub { break-inside: avoid; }
+}
