@@ -1,0 +1,69 @@
+/* site.css — shared shell styles for EVERY page (jemdoc pages and the
+   generated publications page alike).
+
+   Loaded via site.conf for the jemdoc pages and by build_pubs.py for
+   publications.html, so the two page types stay in step. Keep anything that
+   should look the same across the whole site here; publication-specific
+   styling lives in pubs.css.
+
+   This file is ours — unlike jemdoc-cvx.css, it is not overwritten by a
+   jemdoc-cvx upgrade. */
+
+/* A grid item defaults to min-width:auto, which means it refuses to shrink
+   below its widest unbreakable child. One long non-wrapping label was enough
+   to push the whole page wider than the screen. */
+#layout-content { min-width: 0; }
+
+img { max-width: 100%; height: auto; }
+
+/* ---- phones and narrow windows -------------------------------------- */
+
+@media (max-width: 700px) {
+
+	/* sidebar becomes a strip across the top instead of a column that eats
+	   half the width */
+	#tlayout { grid-template-columns: 1fr; }
+
+	#layout-menu {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		gap: 0.1em 1.1em;
+		white-space: normal;
+		border-left: none;
+		border-right: none;
+		border-top: none;
+		padding: 0.5em 16px 0.6em;
+	}
+
+	#layout-menu .menu-category {
+		width: 100%;
+		margin-bottom: 0.15em;
+	}
+
+	#layout-menu .menu-item { margin: 0; }
+	#layout-menu a { margin-left: 0; }
+
+	#layout-content {
+		padding-left: 16px;
+		padding-right: 16px;
+	}
+
+	#toptitle h1 { font-size: 1.6em; }
+
+	/* jemdoc's {}{img_left} builds a two-column table; stack it */
+	table.imgtable,
+	table.imgtable tbody,
+	table.imgtable tr,
+	table.imgtable td {
+		display: block;
+		width: auto;
+		max-width: 100%;
+	}
+
+	table.imgtable td { padding: 0; }
+	table.imgtable img { margin-bottom: 0.6em; }
+
+	/* long email addresses and URLs should break rather than overflow */
+	#layout-content a { overflow-wrap: break-word; }
+}

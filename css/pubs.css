@@ -287,10 +287,18 @@ a.pub-link:hover {
 
 /* ---- narrow screens -------------------------------------------------- */
 
-@media (max-width: 640px) {
-	#tlayout { grid-template-columns: 1fr; }
-	#layout-menu { white-space: normal; }
+@media (max-width: 700px) {
+	/* the page shell is handled in site.css; only publication bits here */
 	.pub-title { font-size: 1em; }
+	/* a long venue name must be allowed to break, or its nowrap width sets
+	   the width of the whole grid and the page scrolls sideways */
+	.pub-venue { white-space: normal; }
+	/* flex: none keeps the badge at max-content, which overflows a phone when
+	   the venue name is long -- let it shrink and wrap instead */
+	.pub-r2 .pub-venue { flex: 0 1 auto; max-width: 100%; }
+	.pub-r2 { gap: 0.25em 0.5em; }
+	/* don't shove the pill to the far edge on a narrow screen */
+	.pub--compact .pub-links { margin-left: 0; }
 }
 
 /* ---- print ----------------------------------------------------------- */

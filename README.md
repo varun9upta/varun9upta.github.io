@@ -1,143 +1,220 @@
-jemdoc-cvx
-==========
-A Claude-coded modernization of *jemdoc* (Jacob Mattingley's static-site generator) and
-*jemdoc+MathJax* (Wonseok Shin's MathJax-aware fork). This fork keeps the
-same `.jemdoc` input format and the iconic look of generated pages, but
-modernizes the tool itself: HTML5 output, CSS3, Python 3.11+, and **server-side
-equation rendering with [KaTeX](https://katex.org/)**.
+# varungupta.info
 
-`.jemdoc` files that worked with prior jemdoc versions continue to work here.
+Source for the site at **www.varungupta.info**, served by GitHub Pages from the
+`main` branch of this repo.
 
-Documentation
--------------
-Full user guide, syntax reference, and worked examples:
-**<https://cvxgrp.org/jemdoc-cvx/>**.
+Two things build this site. Four pages come from jemdoc. The publications page
+is generated from a data file. That split is the one thing to remember.
 
-This README covers just enough to get a typical academic site up and running.
-For everything else — markup syntax, the menu file, conf overrides, theme
-switching, equations — see the documentation site.
+---
 
-Usage
------
+## Quick start
 
-### Download
+From this folder, in PowerShell:
 
-Grab the latest release from
-**<https://github.com/cvxgrp/jemdoc-cvx/releases/latest>** — pick the
-`.tar.gz` or `.zip`. The bundle contains the `jemdoc` script, the default
-theme (`jemdoc-cvx.css`) plus its fonts, the legacy theme variants
-(`jemdoc.css`, `jacob.css`, etc.), and a minimal `package.json` for the
-optional KaTeX install. No `git clone` required for everyday use.
+```
+python jemdoc -c site.conf index.jemdoc bio.jemdoc teaching.jemdoc talks.jemdoc
+python build_pubs.py
+```
 
-    tar -xzf jemdoc-cvx-1.0.0.tar.gz
-    cd jemdoc-cvx-1.0.0
-    ./jemdoc --version
+`-c site.conf` is required. Without it the jemdoc pages lose the mobile
+viewport tag and `css/site.css`, and they stop matching the publications page
+on phones.
 
-If you'd rather track the source, `git clone https://github.com/cvxgrp/jemdoc-cvx.git`
-also works.
+Then commit the changed `.html` in GitHub Desktop and push.
 
-### Building a typical academic website
+**Which command do I need?**
 
-A canonical academic page (homepage, publications list, teaching, CV) is just a
-handful of `.jemdoc` source files alongside a `MENU` file and a stylesheet.
-Recommended layout:
+| I edited… | Run |
+|---|---|
+| `index.jemdoc`, `bio.jemdoc`, `teaching.jemdoc`, `talks.jemdoc` | the first |
+| `publications.toml` | the second |
+| `MENU` | **both** — see the gotcha below |
 
-    mysite/
-        MENU                  # sidebar menu, listed once
-        index.jemdoc          # one .jemdoc per page
-        publications.jemdoc
-        teaching.jemdoc
-        cv.jemdoc
-        jemdoc-cvx.css        # the default theme stylesheet
-        fonts/                # the woff2 files that go with the theme
-            source-serif-4-latin-wght-normal.woff2
-            source-serif-4-latin-wght-italic.woff2
-            jetbrains-mono-latin-wght-normal.woff2
-        papers/               # PDFs etc. served as-is
-            mypaper.pdf
+Running both every time is harmless and takes a second. When in doubt, do that.
 
-To bootstrap a new site, copy the theme assets out of the unpacked bundle (or
-the cloned repo) and start writing pages:
+Requires **Python 3.11 or newer** and nothing else. No `pip install`.
+(`tomllib` has been in the standard library since 3.11.)
 
-    cp /path/to/jemdoc-cvx-1.0.0/css/jemdoc-cvx.css .
-    cp -r /path/to/jemdoc-cvx-1.0.0/css/fonts .
-    # write your .jemdoc sources, plus a MENU file, then build:
-    /path/to/jemdoc-cvx-1.0.0/jemdoc *.jemdoc
+---
 
-`jemdoc` writes an `index.html` next to each `index.jemdoc`, etc. To send the
-output to a separate directory:
+## What's in here
 
-    mkdir build
-    ../jemdoc-cvx/jemdoc -o build/ *.jemdoc
-    cp jemdoc-cvx.css build/
-    cp -r fonts build/
+### You edit these
 
-Then point your webserver (Apache/nginx/whatever your faculty department runs)
-at the directory containing the rendered `.html` files. The output is plain
-static HTML — no server-side runtime is needed to serve it.
+| File | What it is |
+|---|---|
+| `index.jemdoc` `bio.jemdoc` `teaching.jemdoc` `talks.jemdoc` | page sources, jemdoc markup |
+| `publications.toml` | **every publication**, as structured data |
+| `MENU` | the sidebar, shared by all pages |
+| `site.conf` | jemdoc overrides: viewport tag + `css/site.css` |
 
-### Server-side equation rendering (KaTeX)
+### Generated — never edit by hand
 
-If your pages contain LaTeX equations (`$inline$` or `\(display\)` blocks),
-install the pinned KaTeX CLI **once on the machine where you build the site**
-(your laptop, or whichever machine runs `jemdoc`). It is *not* needed on the
-machine that serves the resulting HTML:
+`index.html`, `bio.html`, `teaching.html`, `talks.html`, `publications.html`.
+Anything you type into these is lost on the next build.
 
-    cd /path/to/jemdoc-cvx-1.0.0  # the unpacked release bundle (or clone)
-    npm install                   # one-time, installs node_modules/.bin/katex
+### Tooling
 
-`jemdoc` automatically uses the local `katex` binary at build time and embeds
-the rendered HTML directly in each page. Cached output goes in `katexcache/`
-next to your sources, so subsequent builds are fast.
+| File | What it is |
+|---|---|
+| `jemdoc` | the jemdoc-cvx script (Python, no extension). **Locally patched — see below.** |
+| `build_pubs.py` | generates `publications.html` from `publications.toml` |
+| `css/jemdoc-cvx.css` | the theme, plus `css/fonts/` |
+| `css/site.css` | shared shell styles — responsive layout for **all** pages |
+| `css/pubs.css` | styles for the publications page only |
+| `Makefile` | optional; `make docs` runs both builds |
 
-If you skip this step or `katex` isn't found on `PATH`, jemdoc-cvx falls back
-to emitting raw `\(...\)` / `\[...\]` markers, which a client-side MathJax
-script can render in the browser if you load one via a conf override. See the
-[latex equations page](https://cvxgrp.org/jemdoc-cvx/latex.html) for details.
+### Committed vs. local-only
 
-Requirements
-------------
-- **Python 3.11+** (standard library only; nothing to `pip install` for
-  everyday use).
-- **Node.js**, only if you want server-side equation rendering. Run
-  `npm install` once in this repo to install the pinned KaTeX CLI.
-- **[uv](https://docs.astral.sh/uv/)**, only if you want to contribute (run
-  the test suite or the linter).
+Only the rendered `.html`, `css/`, images and PDFs are committed. **Your sources
+are deliberately not published** — the `.jemdoc` files contain commented-out old
+addresses and unpublished notes.
 
-Development
------------
-Dev tooling (pytest, ruff) is managed by uv. From a fresh clone:
+Gitignored, living only in Dropbox: `*.jemdoc`, `MENU`, `site.conf`,
+`publications.toml`, `build_pubs.py`, `*.log`, `jemdoc.vim`.
 
-    uv sync                # creates .venv/ and installs the dev dependency group
-    npm install            # installs the pinned KaTeX CLI
+> **This means Dropbox is the only backup of your sources.** Git has the output
+> but not the input. Dropbox version history is the safety net.
 
-Then:
+> **`css/site.css` and `css/pubs.css` must stay committed.** Neither is ignored.
+> Without `site.css` every page breaks on mobile; without `pubs.css` the
+> publications page renders as unstyled text.
 
-    make test              # uv run pytest tests/
-    make lint              # uv run ruff check .
-    make docs              # builds the project's own documentation site to www/html/
+---
 
-The `tests/fixtures/` directory holds reference HTML for every page in
-`example/` and `www/`; tests assert byte-equality (with the timestamp footer
-normalized) against those fixtures. Update them intentionally when you change
-emitted HTML.
+## Adding a publication
 
-### Cutting a release
+Open `publications.toml`, add a block anywhere (order in the file doesn't
+matter — the generator sorts), run `python build_pubs.py`.
 
-Version is canonical in `jemdoc` (the `__version__` constant near the top);
-`pyproject.toml` and `package.json` mirror it. To bump them all in lockstep:
+```toml
+[[pub]]
+title   = "Some New Paper"
+authors = ["A. Coauthor", "V. Gupta"]
+type    = "conference"
+venue   = "NeurIPS"
+year    = 2027
+[[pub.links]]
+label = "arXiv"
+url   = "https://arxiv.org/abs/..."
+[[pub.links]]
+label = "DOI"
+url   = "https://doi.org/..."
+```
 
-    make bump-version VERSION=1.1.0
-    git commit -am "Bump to 1.1.0"
-    git tag -a v1.1.0 -m "Release 1.1.0"
-    git push origin main v1.1.0
+**Fields**
 
-Pushing the `vX.Y.Z` tag triggers `.github/workflows/release.yml`, which
-verifies the tag matches all three files (failing CI if they've drifted),
-builds the `.tar.gz` / `.zip` bundle, and creates a GitHub Release with
-auto-generated notes.
+- `title` — required.
+- `authors` — required. **In true publication order.** The entry matching
+  `V. Gupta` exactly is rendered bold; other Guptas are left alone.
+- `type` — `journal` | `conference` | `working` | `chapter` | `thesis`.
+  Controls which section it lands in and the badge colour.
+- `venue` — what shows in the badge. Keep it short: `Operations Research`,
+  `NeurIPS`, `AISTATS`.
+- `year` — shows inside the badge. Working papers can omit it.
+- `detail` — volume/issue, e.g. `"74(2):100-120"`. **Not displayed** right now
+  (see `SHOW_VOLUME`), but worth recording — it's there for a future BibTeX or
+  CV export.
+- `status` — working papers only: `"Under submission"`, `"Work in progress"`.
+- `award` — gets its own gold line under the entry.
+- `[[pub.links]]` — repeat for each. Labels are normalised and reordered to
+  `DOI · arXiv · SSRN · PDF · Tech report · Slides · Video`; unknown labels
+  (e.g. `OpenReview`) are kept as written and sort last.
 
-License
--------
-GPL-3.0-or-later. See `LICENSE` for the original jemdoc copyright; the
-KaTeX/HTML5 modernization changes are likewise GPL-3.0-or-later.
+If the TOML is malformed the build **fails loudly** with a line number. It will
+never produce a half-broken page.
+
+---
+
+## Page layout
+
+Two rows per paper:
+
+```
+Title of the paper
+[VENUE | YEAR]  A. Author, V. Gupta and B. Author   [DOI] [arXiv]
+```
+
+The badge leads row two so every badge starts at the same left position and
+forms a column you can scan down. (Right-aligned badges were tried and rejected:
+the gap from a short title grows with window width and you have to go looking.)
+An award, when there is one, gets a third row.
+
+Four switches at the top of `build_pubs.py`:
+
+```python
+WORKING_STYLE    = "compact"   # "compact" | "full" | "collapsed"
+WORKING_POSITION = "top"       # "top" | "bottom"
+GROUP_BY_YEAR    = False       # True = year headings instead of year-in-badge
+SHOW_VOLUME      = False       # True = show "Vol. 73(3), pp. 1496-1534"
+```
+
+`collapsed` hides working papers behind a click-to-open toggle — useful if that
+list grows past eight or so.
+
+---
+
+## Publishing
+
+In GitHub Desktop: review the changed files, write a summary, **Commit to main**,
+**Push origin**. Then load the site and hard-refresh (**Ctrl+Shift+R**) — the
+browser caches aggressively.
+
+Only `.html` files should normally appear in the Changes list. If you see
+`publications.toml` or a `.jemdoc` file there, something is wrong with
+`.gitignore`.
+
+---
+
+## Gotchas
+
+**Editing `MENU` needs both builds.** The sidebar is baked into every page, and
+`build_pubs.py` reads `MENU` independently of jemdoc. Rebuild only one side and
+the publications page silently keeps the old sidebar.
+
+**The `jemdoc` script is locally patched. Upgrading wipes the patches.** If you
+ever download a newer jemdoc-cvx and unpack it over this folder, re-apply:
+
+1. Line ~190, `[defaultcss]` — must read `href="css/jemdoc-cvx.css"`.
+   Upstream points at the repo root; the theme lives in `css/` here so its
+   `@font-face url("fonts/…")` rules resolve. *Symptom if lost: every page
+   renders as unstyled text.*
+2. Lines ~304, ~383, ~749 — the `target` attribute. Upstream emits
+   `target="blank"`, and jemdoc's own smart-quote pass then mangles it into
+   `target=&ldquo;blank&rdquo;`. Lines 304 and 383 use plain `' target="_blank"'`.
+   Line 749 sits inside `replacelinks()`, which runs through `br()`, so it must
+   escape both the quotes and the underscore: `' target=\"\_blank\"'`.
+   Do **not** use a bare `_blank` there — jemdoc reads `_` as underline markup
+   and emits `target=<u>blank>`. *Symptom if lost: links open in the same tab.*
+
+**`publications.jemdoc` is dead.** If it's still sitting in this folder, delete
+it. Nothing builds it; editing it does nothing.
+
+**Equations.** None of your pages have any. If you add LaTeX to a jemdoc page,
+run `npm install` once here to get the pinned KaTeX, otherwise math renders as
+raw `\(...\)`. The publications page doesn't support equations at all.
+
+---
+
+## Troubleshooting
+
+| Symptom | Cause |
+|---|---|
+| Site is plain text, no styling | a file in `css/` not committed, or the jemdoc patch above was lost |
+| Pages tiny / zoomed out on a phone | built without `-c site.conf` |
+| Page scrolls sideways on a phone | something long is `white-space: nowrap`; let it wrap in `css/site.css` or `css/pubs.css` |
+| Publications page has an old sidebar | edited `MENU` but only ran jemdoc |
+| Changes don't appear after pushing | browser cache — **Ctrl+Shift+R**; GitHub Pages also takes a minute |
+| Links open in the same tab | the `target` patch was lost |
+| `python` not recognised | try `py` instead |
+| Edited a page, nothing changed | you edited the `.html`, not the source |
+
+---
+
+## Related
+
+- `publications.toml` holds the data; your CV (`cv_varun.pdf`) is maintained
+  separately and the two drift. They were last reconciled on 1 Oct 2026.
+- jemdoc-cvx's own documentation: <https://cvxgrp.org/jemdoc-cvx/>
+  (its README is also in `jemdoc-cvx-1.0.0/README.md`).

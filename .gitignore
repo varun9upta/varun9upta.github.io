@@ -3,6 +3,7 @@
 MENU
 publications.toml
 build_pubs.py
+site.conf
 
 # stray LaTeX / build logs
 *.log
